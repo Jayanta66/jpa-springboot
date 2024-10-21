@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -57,6 +58,12 @@ public class UserController {
 		return userr;
 	}
 
+	@GetMapping("/findbyid/{id}")
+	public Optional findbyid(@PathVariable Long id){
+		return userService.findbyid(id);
+	}
+	
+	
 	@DeleteMapping("/delete/{id}")
 	public String delete(@PathVariable Long id){
 		return userService.delete(id);

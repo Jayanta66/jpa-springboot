@@ -43,5 +43,16 @@ public class UserService {
 		return "Deleted";
 	}
 
+
+	public Optional findbyid(Long id) {
+		Optional user=userRepository.findById(id);
+		return user;
+	}
+	
+//	public Optional<User> findbyid(Long id) {
+//		
+//		return userRepository.findById(id);
+//	}
+
 }
 	
